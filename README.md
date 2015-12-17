@@ -13,7 +13,7 @@ details: - Return album's song list with duration in [{song}, {duration}]
 id of genre - Use with show=album  
 id of album - Use with show=details  
 
-#example
+#demo / example
 Get list of all available genre. Return in [{id}, {name}].  
 http://assignment.two.quite.cool/list.php?show=genre  
 
