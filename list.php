@@ -1,15 +1,16 @@
 <?php
 
     require(__DIR__ . "/includes/config.php");
-
+	
     function showUsage() {
         $tracking = "INSERT INTO access_records (user_agent, user_ip, user_request) VALUES ('" .$_SERVER['HTTP_USER_AGENT'] . "', '" .$_SERVER['REMOTE_ADDR'] . "', 'show usage')";
         query($tracking);
-        header("Location: http://assignment.two.quite.cool/");
+        header("Location: http://WhatEverYouWantRedirect.To");
         die();
-        exit;
     }
 
+	nameorExit();
+	
     if (!empty($_GET["show"]))
     {
         if ($_GET["show"] == "genre")
