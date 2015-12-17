@@ -61,5 +61,12 @@
         // return result set's rows
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
-
+	
+	// return bad response if not recongised.
+	function nameorExit() {
+		if (empty($_SERVER['HTTP_USER_AGENT'])) {
+			http_response_code(400);
+			die();
+		}
+	}
 ?>
