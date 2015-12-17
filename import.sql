@@ -14,6 +14,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `access_records`
+--
+
+CREATE TABLE IF NOT EXISTS `access_records` (
+  `id` int(5) NOT NULL,
+  `user_agent` varchar(50) NOT NULL,
+  `user_ip` varchar(15) NOT NULL,
+  `user_request` varchar(300) NOT NULL,
+  `time_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `album`
 --
 
@@ -54,6 +68,12 @@ CREATE TABLE IF NOT EXISTS `genre` (
 --
 
 --
+-- Indexes for table `access_records`
+--
+ALTER TABLE `access_records`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `album`
 --
 ALTER TABLE `album`
@@ -75,6 +95,11 @@ ALTER TABLE `genre`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `access_records`
+--
+ALTER TABLE `access_records`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `album`
 --
