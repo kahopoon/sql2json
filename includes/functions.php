@@ -63,8 +63,11 @@
     }
 	
 	// return bad response if not recongised.
-	function nameorExit() {
+	function nameorExit($request_type) {
 		if (empty($_SERVER['HTTP_USER_AGENT'])) {
+			$request = "(denied) " .$request_type;
+			$tracking = "INSERT INTO access_records (user_agent, user_ip, user_request) VALUES ('not recongised', '" .$_SERVER['REMOTE_ADDR'] . "', '" .$request . "')";
+			query($tracking);
 			http_response_code(400);
 			die();
 		}
