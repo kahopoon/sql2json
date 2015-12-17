@@ -9,7 +9,7 @@
         die();
     }
 
-	nameorExit();
+    nameorExit();
 	
     if (!empty($_GET["show"]))
     {
