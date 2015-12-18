@@ -25,7 +25,7 @@
         }
         else if ($_GET["show"] == "album")
         {
-            if (!empty($_GET["id"]))
+            if (!empty($_GET["id"]) && is_numeric($_GET["id"]))
             {
                 $show = "SELECT id, name, artists, release_date, genre FROM album WHERE genre = " .$_GET["id"];
             }
@@ -33,7 +33,7 @@
         }
         else if ($_GET["show"] == "details")
         {
-            if (!empty($_GET["id"]))
+            if (!empty($_GET["id"]) && is_numeric($_GET["id"]))
             {
                 $show = "SELECT song, duration FROM details WHERE album_id = " .$_GET["id"];
             }
